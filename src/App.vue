@@ -20,5 +20,9 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
 
 </style>
