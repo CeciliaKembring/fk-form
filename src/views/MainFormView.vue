@@ -12,7 +12,7 @@ import Other from '../components/Other.vue'
     <div class="main-form" action="#">
       <div class="container-form">
         <div class="box">
-          <h1>test Ansök om bostadsbidrag</h1>
+          <h1>Ansök om bostadsbidrag</h1>
           <h3>Ha gott om tid för att fylla i ansökan</h3>
           <p class="medium">I den här ansökan kan du behöva fylla i många uppgifter. Tyvärr går det inte att spara och
             fortsätta vid ett senare tillfälle.</p>
