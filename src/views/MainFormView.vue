@@ -1,0 +1,52 @@
+<script setup>
+import Info from '../components/Info.vue'
+import Address from '../components/Address.vue'
+import Family from '../components/Family.vue'
+import Income from '../components/Income.vue'
+import Assets from '../components/Assets.vue'
+import Other from '../components/Other.vue'
+</script>
+
+<template>
+  <form>
+    <div class="main-form" action="#">
+      <div class="container-form">
+        <div class="box">
+          <h1>Ansök om bostadsbidrag</h1>
+          <h3>Ha gott om tid för att fylla i ansökan</h3>
+          <p class="medium">I den här ansökan kan du behöva fylla i många uppgifter. Tyvärr går det inte att spara och
+            fortsätta vid ett senare tillfälle.</p>
+        </div>
+
+        <div class="container-wrap">
+        
+          <Info />
+          <Address />
+          <Family />
+          <Income />
+          <Assets />
+          <Other />
+
+        </div>
+
+
+        <h2>Underskrift</h2>
+        <form class="sign-form" action="#">
+            <input type="checkbox" id="sign" name="signForm" value="sign">
+            <label for="sign">Jag intygar på heder och samvete att de uppgifter jag lämnar är riktiga och fullständiga.
+            Jag vet att jag kan få betala tillbaka felaktigt utbetald ersättning. Jag vet att jag kan göra mig skyldig
+            till brott om jag lämnar oriktiga eller ofullständiga uppgifter, eller inte meddelar Försäkringskassan när
+            uppgifterna ändras.</label><br>
+        </form>
+        <button class="apply">Signera</button>
+      </div>
+    </div>
+  </form>
+</template>
+
+<style scoped>
+.main-form {
+  padding: 20px;
+}
+
+</style>
