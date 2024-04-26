@@ -77,4 +77,18 @@ margin-bottom: 8px;
 label{
     font-size: 1.3em;
 }
+.input_form {
+      display: flex;
+      flex-direction: column;
+}
+
+.input_form input {
+      width: 500px;
+}
+
+input {
+      padding: 10px;
+      border-radius: 5px;
+
+}
 </style>
