@@ -1,7 +1,7 @@
 @import './base.css';
 
 .main-form{
-  max-width: 1200px;
+  max-width: 1000px;
   display: flex;
   justify-content: center;
   margin: 0 auto;
@@ -19,12 +19,12 @@ p{
   max-width: 800px;
 }
 .main-form h2{
-  font-size: 3rem;
+  font-size: 2rem;
   margin-top: 2rem;
   margin-bottom: 1.3rem;
 }
 .box h1{
-  font-size: 4em;
+  font-size: 3em;
   margin-bottom: 40px;
   margin-top: 40px;
 }

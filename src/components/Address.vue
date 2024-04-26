@@ -9,7 +9,7 @@ const toggleShow = () => {
 
 const addressStatus = ref('yes');
 
-const selectedAccommodation = ref('hyresratt'); 
+const selectedAccommodation = ref('choose'); 
 </script>
 
 <template>
