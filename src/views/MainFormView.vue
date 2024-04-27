@@ -21,7 +21,6 @@ const isInfoModalVisible = ref(false);
 
 
 <template>
-  <form>
     <div class="main-form" action="#">
       <div class="container-form">
         <div class="box">
@@ -68,7 +67,7 @@ const isInfoModalVisible = ref(false);
         <button class="apply">Signera</button>
       </div>
     </div>
-  </form>
+
 </template>
 
 <style scoped>

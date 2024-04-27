@@ -2,6 +2,7 @@
 
 </script>
 <template>
+    <form action="#">
     <div class="container" id="uppgifter">
         <h3>1. Mina uppgifter</h3>
         <p>Namn Namnsson</p>
@@ -19,6 +20,7 @@
 
         <button type="button" class="app-btn">Ändra</button>
     </div>
+</form>
 </template>
 
 <style scoped>

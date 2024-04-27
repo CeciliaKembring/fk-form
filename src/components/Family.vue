@@ -9,6 +9,7 @@ const toggleVisibility = () => {
 </script>
 
 <template>
+    <form action="#">
     <div class="container">
         <h3>3. Barn och inneboende</h3>
         <div v-if="!isFilledIn" class="hide">
@@ -65,6 +66,7 @@ const toggleVisibility = () => {
 
         <button type="button" class="app-btn" @click="toggleVisibility">{{ isFilledIn ? 'Gå vidare' : 'Fyll i' }}</button>
     </div>
+</form>
 </template>
 
 <style scoped>

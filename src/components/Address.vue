@@ -13,6 +13,7 @@ const selectedAccommodation = ref('choose');
 </script>
 
 <template>
+  <form action="#">
   <div class="container" id="bostad">
     <h3>2. Bostad</h3>
     <p class="medium">Här fyller du i uppgifter om den bostad som du vill ha bostadsbidrag för</p>
@@ -202,6 +203,7 @@ const selectedAccommodation = ref('choose');
 
     <input type="button" value="Fyll i" class="app-btn" @click="toggleShow">
   </div>
+</form>
 </template>
 
 <style scoped>

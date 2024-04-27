@@ -8,6 +8,7 @@ const toggleVisibility = () => {
 };
 </script>
 <template>
+    <form action="#">
     <div class="container">
         <h3>5. Tillgångar och skulder</h3>
         <p>Här fyller du i uppgifter om tillgångar och skulder.</p>
@@ -56,7 +57,7 @@ const toggleVisibility = () => {
         </div>
 
     </div>
-
+</form>
 </template>
 <style scoped>
 
