@@ -8,6 +8,7 @@ import TheWelcome from '../components/TheWelcome.vue'
     <form action="#">
       <label for="test_input">Test</label>
       <input type="text" id="test_input">
+      <input type="submit" value="skicka">
     </form>
   </main>
 </template>
