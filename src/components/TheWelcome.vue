@@ -1,14 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
 
-const navigateToMainForm = () => {
-  const router = useRouter();
-  if (router) {
-    router.push({ name: 'mainForm' });
-  } else {
-    console.error("Router is not defined.");
-  }
-};
+
 </script>
 
 <template>
@@ -40,7 +33,9 @@ const navigateToMainForm = () => {
   <label for="yes">Ja, det bor barn över 18 där</label><br>
 </form>
 </div>
-<button type="button" class="apply" @click="navigateToMainForm">Till ansökan</button>
+<div class="apply_btn">
+<router-link to="/mainForm" class="apply">Till ansökan</router-link>
+</div>
 </div>
 </div>
 </template>
@@ -49,4 +44,13 @@ const navigateToMainForm = () => {
 .bold{
     margin-bottom: 20px;
 }
+.apply{
+  text-decoration: none;
+}
+.apply_btn{
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+
 </style>

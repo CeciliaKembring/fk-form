@@ -13,6 +13,11 @@ const router = createRouter({
       path: '/mainForm',
       name: 'mainForm',
       component: () => import('../views/MainFormView.vue')
+    },
+    {
+      path: '/savePage',
+      name: 'savePage',
+      component: () => import('../views/SaveView.vue')
     }
   ]
 })
