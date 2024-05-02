@@ -65,7 +65,6 @@ const toggleLodgerVisibility = (value) => {
                     <div v-if="isLodgerFilledIn" class="lodger_info">
                         <label for="firstname">Förnamn</label><br>
                         <input type="text" id="firstname"><br>
-                        <input type="text" id="firstname"><br>
                         <label for="surname">Efternamn</label><br>
                         <input type="text" id="surname"><br>
                         <label for="persNumber">Personnummer</label><br>
