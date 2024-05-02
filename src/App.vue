@@ -9,8 +9,8 @@ import { RouterLink, RouterView } from 'vue-router'
     <div class="wrapper">
    
       <nav>
-        <RouterLink to="/">Startsida</RouterLink>
-        <RouterLink to="/mainForm">Ansök om bostadsbidrag</RouterLink>
+        <RouterLink to="/">Tillbaka</RouterLink>
+        <!-- <RouterLink to="/mainForm">Ansök om bostadsbidrag</RouterLink> -->
       </nav>
     </div>
   </header>
