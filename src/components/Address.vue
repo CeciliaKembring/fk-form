@@ -186,7 +186,7 @@ const selectedAccommodation = ref('choose');
         <p class="bold">Övriga uppgifter</p>
         <p>Kryssa i de uppgifter som gäller för dig.</p>
         <input type="checkbox" id="rent_period">
-        <label for="rent_period">Jag har fyresfria perioder</label><br>
+        <label for="rent_period">Jag har hyresfria perioder</label><br>
         <input type="checkbox" id="rent_discount">
         <label for="rent_discount">Jag har hyresrabatt</label><br>
         <input type="checkbox" id="rent_function">

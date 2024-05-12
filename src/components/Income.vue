@@ -256,8 +256,8 @@ p {
 }
 
 .bold {
-      margin-top: 10px;
-      margin-bottom: 10px;
+      margin-top: 20px;
+      margin-bottom: 15px;
       font-size: 1.3em;
 }
 
