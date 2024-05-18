@@ -1,19 +1,15 @@
-import './assets/main.css'
-
 import { createApp } from 'vue'
-import VueMatomo from 'vue-matomo'
 import App from './App.vue'
 import router from './router'
+import VueMatomo from 'vue-matomo'
 
-createApp(App)
-.use(VueMatomo, {
-    // Configure your matomo server and site by providing
+const app = createApp(App)
+
+app.use(router)
+
+app.use(VueMatomo, {
     host: '{YOUR_MATOMO_INSTANCE_URL}',
     siteId: {YOUR_SITE_ID},
 })
-.mount('#app')
 
-
-window._paq.push(['trackPageView']); //To track pageview
-
-
+app.mount('#app')
