@@ -8,8 +8,8 @@ const app = createApp(App)
 app.use(router)
 
 app.use(VueMatomo, {
-    host: '{YOUR_MATOMO_INSTANCE_URL}',
-    siteId: {YOUR_SITE_ID},
+    host: 'https://studenter.miun.se/~ceke2200/writeable/matomo/',
+    siteId: 1
 })
 
 app.mount('#app')
