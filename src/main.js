@@ -1,15 +1,37 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-import VueMatomo from 'vue-matomo'
+import Vue from 'vue';
+import App from './App.vue';
+import VueMatomo from 'vue-matomo';
 
-const app = createApp(App)
+Vue.config.productionTip = false;
 
-app.use(router)
+Vue.use(VueMatomo, {
+  // Configure your Matomo server and site
+  host: 'https://studenter.miun.se/~ceke2200/writeable/matomo/',
+  siteId: 1,
 
-app.use(VueMatomo, {
-    host: 'https://studenter.miun.se/~ceke2200/writeable/matomo/',
-    siteId: 1
-})
 
-app.mount('#app')
+  router: router,
+
+
+  requireConsent: false,
+
+
+  enableLinkTracking: true,
+
+
+  requireCookieConsent: false,
+
+
+  trackInitialView: true,
+
+
+  ignoreRoutes: [],
+
+
+  debug: false,
+});
+
+new Vue({
+  router,
+  render: h => h(App),
+}).$mount('#app');
