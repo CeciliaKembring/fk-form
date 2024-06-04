@@ -6,13 +6,6 @@ import { RouterLink, RouterView } from 'vue-router'
   <header>
 
 
-    <div class="wrapper">
-   
-      <nav>
-        <RouterLink to="/">Tillbaka</RouterLink>
-        <!-- <RouterLink to="/mainForm">Ansök om bostadsbidrag</RouterLink> -->
-      </nav>
-    </div>
   </header>
 <main>
   <RouterView />

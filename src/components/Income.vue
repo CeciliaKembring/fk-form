@@ -44,10 +44,10 @@ const toggleVisibility = () => {
                               <div class="input_form">
                                     <label for="first_year">1 januari - 31 december 2024</label><br>
                                     <input type="text" id="first_year">
-                                    <p>Kronor</p><br>
+                                    
                                     <label for="second_year">1 januari - 31 december 2025</label><br>
                                     <input type="text" id="second_year">
-                                    <p>Kronor</p><br>
+                                   
                               </div>
 
                               <p class="bold">Resekostnader</p>
@@ -63,10 +63,10 @@ const toggleVisibility = () => {
                                     <div class="input_form">
                                           <label for="first_year_travel">1 januari - 31 december 2024</label><br>
                                           <input type="text" id="first_year_travel">
-                                          <p>Kronor</p><br>
+                                        
                                           <label for="second_year_travel">1 januari - 31 december 2025</label><br>
                                           <input type="text" id="second_year_travel">
-                                          <p>Kronor</p><br>
+                                    
                                     </div>
                               </div>
                               <p class="bold">Inkomster från annat land</p>
@@ -81,10 +81,10 @@ const toggleVisibility = () => {
                                     <div class="input_form">
                                           <label for="first_year_other">1 januari - 31 december 2024</label><br>
                                           <input type="text" id="first_year_other">
-                                          <p>Kronor</p><br>
+                                         
                                           <label for="second_year_other">1 januari - 31 december 2025</label><br>
                                           <input type="text" id="second_year_other">
-                                          <p>Kronor</p><br>
+                                    
                                     </div>
                               </div>
                         </div>
@@ -242,6 +242,7 @@ const toggleVisibility = () => {
                         <input type="radio" id="yes_social">
                         <label for="yes_social">Ja</label>
 
+
                   </div>
 
                   <button type="button" class="app-btn" @click="toggleVisibility">{{ isFilledIn ? 'Gå vidare' : 'Fyll i'
@@ -278,7 +279,7 @@ h5 {
 }
 
 .input_form input {
-      width: 500px;
+      max-width: 500px;
 }
 
 input {

@@ -145,7 +145,7 @@ label {
 }
 
 .input_form input {
-    width: 500px;
+    max-width: 500px;
 }
 
 input {

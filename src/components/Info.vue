@@ -18,7 +18,9 @@
         <p class="bold">Bank</p>
         <p>Namn på bank</p>
 
+        
         <button type="button" class="app-btn">Ändra</button>
+        <p>*Statisk, kan ej ändras*</p>
     </div>
 </form>
 </template>
