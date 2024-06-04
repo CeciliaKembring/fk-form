@@ -6,11 +6,23 @@ const showIncome = ref(false);
 const incomeSelection = ref('');
 const showTravel = ref(false);
 const travelSelection = ref('');
+const companySelection = ref('');
+const taxFreeSelection = ref('');
+const csnSelection = ref('');
+const establishSelection = ref('');
+const scholarshipSelection = ref('');
+const capitalSelection = ref('');
 
 const toggleVisibility = () => {
       isFilledIn.value = !isFilledIn.value;
       showIncome.value = false;
       showTravel.value = false;
+      companySelection.value = '';
+      taxFreeSelection.value = '';
+      csnSelection.value = '';
+      establishSelection.value = '';
+      scholarshipSelection.value = '';
+      capitalSelection.value = '';
 
 };
 </script>
@@ -44,29 +56,27 @@ const toggleVisibility = () => {
                               <div class="input_form">
                                     <label for="first_year">1 januari - 31 december 2024</label><br>
                                     <input type="text" id="first_year">
-                                    
+
                                     <label for="second_year">1 januari - 31 december 2025</label><br>
                                     <input type="text" id="second_year">
-                                   
+
                               </div>
 
                               <p class="bold">Resekostnader</p>
                               <input type="checkbox" id="travel_expences" v-model="travelSelection" value="yes_travel">
-
                               <label for="travel_expences">Jag har kostnader för resor till och från arbetet på mer än
                                     11 000
                                     kronor
                                     per år.</label>
-                              <div class="travel_info" v-if="travelSelection === 'yes_travel' && isFilledIn">
-
+                              <div class="travel_info" v-if="travelSelection && isFilledIn">
                                     <p class="bold">Totala resekostnader</p>
                                     <div class="input_form">
                                           <label for="first_year_travel">1 januari - 31 december 2024</label><br>
                                           <input type="text" id="first_year_travel">
-                                        
+
                                           <label for="second_year_travel">1 januari - 31 december 2025</label><br>
                                           <input type="text" id="second_year_travel">
-                                    
+
                                     </div>
                               </div>
                               <p class="bold">Inkomster från annat land</p>
@@ -81,10 +91,10 @@ const toggleVisibility = () => {
                                     <div class="input_form">
                                           <label for="first_year_other">1 januari - 31 december 2024</label><br>
                                           <input type="text" id="first_year_other">
-                                         
+
                                           <label for="second_year_other">1 januari - 31 december 2025</label><br>
                                           <input type="text" id="second_year_other">
-                                    
+
                                     </div>
                               </div>
                         </div>
@@ -93,13 +103,13 @@ const toggleVisibility = () => {
                         <h4>Inkomst från eget företag</h4>
                         <p class="bold">Har du haft eller kommer du att ha inkomst från eget företag i år eller nästa
                               år?</p>
-                        <input type="radio" id="no_company">
+                        <input type="radio" id="no_company" v-model="companySelection" value="no_company">
                         <label for="no_company">Nej</label><br>
-                        <input type="radio" id="yes_company">
+                        <input type="radio" id="yes_company" v-model="companySelection" value="yes_company">
                         <label for="yes_company">Ja</label>
 
 
-                        <div class="have_company">
+                        <div v-if="companySelection === 'yes_company' && isFilledIn" class="have_company">
                               <p class="bold">Beräkna överskott</p>
                               <div class="input_form">
                                     <label for="excess_first">1 januari 2024 - 31 decemmber 2024</label><br>
@@ -160,19 +170,21 @@ const toggleVisibility = () => {
 
                         <h4>Skattefria inkomster</h4>
                         <p class="bold">Har du haft eller kommer du att ha skattefria inkomster i år eller nästa år?</p>
-                        <input type="radio" id="no_taxFree">
+                        <input type="radio" id="no_taxFree" v-model="taxFreeSelection" value="no_taxFree">
                         <label for="no_taxFree">Nej</label><br>
-                        <input type="radio" id="yes_taxFree">
+                        <input type="radio" id="yes_taxFree" v-model="taxFreeSelection" value="yes_taxFree">
                         <label for="yes_taxFree">Ja</label>
 
-                        <div class="have_taxFree">
-                              <p class="bold">Har du studiebidrag eller studiestartsstöd från CSN (inte lån)?</p>
-                              <input type="radio" id="no_CSN">
-                              <label for="no_CSN">Nej</label><br>
-                              <input type="radio" id="yes_CSN">
-                              <label for="yes_CSN">Ja</label>
+                        <div>
+                              <div v-if="taxFreeSelection === 'yes_taxFree' && isFilledIn" class="have_taxFree">
+                                    <p class="bold">Har du studiebidrag eller studiestartsstöd från CSN (inte lån)?</p>
+                                    <input type="radio" id="no_CSN" v-model="csnSelection" value="no_CSN">
+                                    <label for="no_CSN">Nej</label><br>
+                                    <input type="radio" id="yes_CSN" v-model="csnSelection" value="yes_CSN">
+                                    <label for="yes_CSN">Ja</label>
+                              </div>
 
-                              <div class="have_CSN">
+                              <div v-if="csnSelection === 'yes_CSN' && isFilledIn" class="have_CSN">
                                     <p class="bold">Beräknat studiebidrag eller studiestartstöd från CSN (inte lån)</p>
                                     <div class="input_form">
                                           <label for="CSN_first">1 januari 2024 - 31 decemmber 2024</label><br>
@@ -183,11 +195,12 @@ const toggleVisibility = () => {
                               </div>
 
                               <p class="bold">Har du etableringsersättning?</p>
-                              <input type="radio" id="no_establish">
+                              <input type="radio" id="no_establish" v-model="establishSelection" value="no_establish">
                               <label for="no_establish">Nej</label><br>
-                              <input type="radio" id="yes_establish">
+                              <input type="radio" id="yes_establish" v-model="establishSelection" value="yes_establish">
                               <label for="yes_establish">Ja</label>
-                              <div class="have_establish">
+
+                              <div v-if="establishSelection === 'yes_establish' && isFilledIn" class="have_establish">
                                     <p class="bold">Beräknad etableringsersättning</p>
                                     <div class="input_form">
                                           <label for="establish_first">1 januari 2024 - 31 decemmber 2024</label><br>
@@ -198,11 +211,15 @@ const toggleVisibility = () => {
                               </div>
 
                               <p class="bold">Har du skattefria stipendier?</p>
-                              <input type="radio" id="no_scholarship">
+                              <input type="radio" id="no_scholarship" v-model="scholarshipSelection"
+                                    value="no_scholarship">
                               <label for="no_scholarship">Nej</label><br>
-                              <input type="radio" id="yes_scholarship">
+                              <input type="radio" id="yes_scholarship" v-model="scholarshipSelection"
+                                    value="yes_scholarship">
                               <label for="yes_scholarship">Ja</label>
-                              <div class="have_scholarship">
+
+                              <div v-if="scholarshipSelection === 'yes_scholarship' && isFilledIn"
+                                    class="have_scholarship">
                                     <p class="bold">Beräknade skattefria stipendier (hela beloppet)</p>
                                     <div class="input_form">
                                           <label for="scholarship_first">1 januari 2024 - 31 decemmber 2024</label><br>
@@ -220,12 +237,12 @@ const toggleVisibility = () => {
                               aktier
                               eller en
                               bostad, eller inkomster från uthyrning av en bostad.</p>
-                        <input type="radio" id="no_capital">
+                        <input type="radio" id="no_capital" v-model="capitalSelection" value="no_capital">
                         <label for="no_capital">Nej</label><br>
-                        <input type="radio" id="yes_capital">
+                        <input type="radio" id="yes_capital" v-model="capitalSelection" value="yes_capital">
                         <label for="yes_capital">Ja</label>
 
-                        <div class="have_capital">
+                        <div v-if="capitalSelection === 'yes_capital' && isFilledIn" class="have_capital">
                               <p class="bold">Beräknad inkomst av kapital</p>
                               <div class="input_form">
                                     <label for="capital_first">1 januari 2024 - 31 decemmber 2024</label><br>
@@ -280,6 +297,7 @@ h5 {
 
 .input_form input {
       max-width: 500px;
+      margin-bottom: 10px;
 }
 
 input {
